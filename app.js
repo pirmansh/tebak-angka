@@ -30,10 +30,12 @@ guessBtn.addEventListener('click', function(){
     let guess = parseInt(guessInput.value);
 
     // Validate
-    if(guess === NaN || guess === undefined || guess < min || guess > max){
+    if(isNaN(guess) || guess < min || guess > max){
+        
         setMessage(`Masukan angka diantara ${min} sampai ${max}  😓`, 'red');
     } 
-    if(guess === menangAngka){
+
+    else if(guess === menangAngka){
         // // Disable input
         //  guessInput.disabled = true;
         // //  ubah border
@@ -58,10 +60,10 @@ guessBtn.addEventListener('click', function(){
 
         
         } else{
+
             // continue
             guessInput.style.borderColor = 'red';
             
-
             // clear
             guessInput.value = '';
             setMessage(`Oopps, angka yang anda masukan salah, coba lagi!  😭`, 'red');

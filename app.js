@@ -30,9 +30,9 @@ guessBtn.addEventListener('click', function(){
     let guess = parseInt(guessInput.value);
 
     // Validate
-    if(guess === NaN || guess < min || guess > max){
-        setMessage(`Masukan angka diantara ${min} sampai ${max}`, 'red');
-    }
+    if(guess === NaN || guess === undefined || guess < min || guess > max){
+        setMessage(`Masukan angka diantara ${min} sampai ${max}  😓`, 'red');
+    } 
     if(guess === menangAngka){
         // // Disable input
         //  guessInput.disabled = true;
@@ -41,7 +41,7 @@ guessBtn.addEventListener('click', function(){
 
         // setMessage(`${menangAngka} benar!!`, 'green');
 
-        gameOver(true, `${menangAngka} adalah angka benar!!`);
+        gameOver(true, `🥳 Benar!! angkanya adalah ${menangAngka}, Selamat ya!! 🤩🎉🎊`);
 
     } else {
         // salah
@@ -54,16 +54,17 @@ guessBtn.addEventListener('click', function(){
         //  guessInput.style.borderColor = 'red';
  
         //  setMessage(`Game over!!, angka yang benar adalah ${menangAngka}`, 'red');
-        gameOver(false, `Game over!!, angka yang benar adalah ${menangAngka}`);
+        gameOver(false, `Game over!! angka yang benar adalah ${menangAngka} 🙈  silahkan coba lagi 😉`);
 
         
         } else{
             // continue
             guessInput.style.borderColor = 'red';
+            
 
             // clear
             guessInput.value = '';
-            setMessage(`Oopps bukan ${guess}, angka yang anda masukan salah, coba lagi!`);
+            setMessage(`Oopps, angka yang anda masukan salah, coba lagi!  😭`, 'red');
         }
     }
 });
@@ -83,7 +84,7 @@ function gameOver(kalahMenang, msg){
 
     
     
-            setMessage(msg);
+            setMessage(msg, color);
 
             // main lagi
 

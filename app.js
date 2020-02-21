@@ -3,7 +3,6 @@ let min = 1,
     menangAngka = randomAngkaBenar(min, max),
     batas = 3;
 
-
 // Get UI element
 const game = document.querySelector('#game'),
       minNum = document.querySelector('.min-num'),
@@ -14,7 +13,6 @@ const game = document.querySelector('#game'),
 
 minNum.textContent = min;
 maxNum.textContent = max;
-
 
 // coba lagi
 
